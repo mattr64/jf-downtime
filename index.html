@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Jellyfin - Server Migration in Progress</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content-wrapper">
+            <!-- Header Section -->
+            <header class="text-center mb-5">
+
+                <h1 class="display-3 fw-bold mb-3">
+                    <i class="fas fa-fish me-3"></i>Jellyfin Maintenance
+                </h1>
+                <div class="status-badge">
+                    <span class="badge">
+                        <i class="fas fa-tools me-2"></i>Server Migration in Progress
+                    </span>
+                </div>
+            </header>
+
+            <!-- Main Message -->
+            <section class="main-message text-center mb-5">
+                <h2 class="mb-4">Jellyfin is Swimming to New Waters!</h2>
+                <p class="lead">
+                    The server is being migrated.<br/>
+                    This will take a few hours - ETA 8PM 8th October.
+                </p>
+                <div class="progress-container mt-4">
+                    <div class="swimming-fish">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fun Activities Section -->
+            <section class="activities-section mb-5">
+                <h3 class="text-center mb-4">
+                    <i class="fas fa-gamepad me-2"></i>Things to Do While You Wait
+                </h3>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="activity-card">
+                            <div class="activity-icon">
+                                <i class="fas fa-mug-hot"></i>
+                            </div>
+                            <h4>Achieve Inner Peace</h4>
+                            <p>Close your eyes, breathe deeply, and attempt to completely suppress all feelings of impatience. (Spoiler alert: It won't work, but it's a fun little game.)</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="activity-card">
+                            <div class="activity-icon">
+                                <i class="fas fa-walking"></i>
+                            </div>
+                            <h4>Read an Actual Book</h4>
+                            <p>Find a relic of the past—a bound collection of paper pages—and attempt to consume media without an internet connection or a dedicated IP address. Note the strange feeling of not buffering.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="activity-card">
+                            <div class="activity-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h4>Practice the Fine Art of Staring</h4>
+                            <p>Locate a blank wall. Sit down. Stare at it. The absence of moving images will grant you clarity and, possibly, existential dread.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="activity-card">
+                            <div class="activity-icon">
+                                <i class="fas fa-cat"></i>
+                            </div>
+                            <h4>Have a cry</h4>
+                            <p>Just start crying, while maintaining intense, tearful eye contact with a ceiling fan. You need to be prepared for the server's eventual, emotional return.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="activity-card">
+                            <div class="activity-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h4>Find a New Hobby (Temporary)</h4>
+                            <p>Select a hobby that takes exactly four hours to complete and requires zero power. For example: Whittle a tiny USB stick out of soap. By the time you're done, your server might be back.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="activity-card">
+                            <div class="activity-icon">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <h4>Touch Grass</h4>
+                            <p>Or at least go to the pub and have at least 7 beers. You will love it.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fun Fact Section -->
+            <section class="fun-fact-section text-center mb-5">
+                <div class="fun-fact-card">
+                    <h4><i class="fas fa-lightbulb me-2"></i>Did You Know?</h4>
+                    <p id="funFact" class="mb-0">Loading a fun fact...</p>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="text-center mt-5">
+                <p class="mb-2">
+                    <i class="fas fa-clock me-2"></i>
+                    Migration started: <span class="fw-semibold" id="migrationTime"></span>
+                </p>
+                <p class="small text-muted">
+                    Thank you for your patience! We're working hard to get everything back up and running.
+                </p>
+                <div class="social-links mt-3">
+                    <button class="btn btn-link" onclick="refreshPage()">
+                        <i class="fas fa-sync-alt"></i> Check Status
+                    </button>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Floating Bubbles Background Effect -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

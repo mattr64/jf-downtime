@@ -1,0 +1,410 @@
+/* Global Styles */
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #50E3C2;
+    --accent-color: #F5A623;
+    --danger-color: #E94B3C;
+    --dark-color: #2C3E50;
+    --light-color: #ECF0F1;
+    --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --gradient-ocean: linear-gradient(180deg, #e0f7ff 0%, #b8e6f5 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--gradient-ocean);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    color: var(--dark-color);
+}
+
+/* Prevent caching */
+body::before {
+    content: '';
+    display: none;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.content-wrapper {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 60px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+/* Header Styles */
+header h1 {
+    color: var(--primary-color);
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-placeholder {
+    animation: float 3s ease-in-out infinite;
+}
+
+.logo-placeholder img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border: 5px solid white;
+    transition: transform 0.3s ease;
+}
+
+.logo-placeholder img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Status Badge */
+.status-badge {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.status-badge .badge {
+    background: var(--gradient-2);
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(245, 87, 108, 0.6);
+    }
+}
+
+/* Main Message */
+.main-message h2 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.main-message .lead {
+    font-size: 1.25rem;
+    color: var(--dark-color);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Swimming Fish Animation */
+.progress-container {
+    height: 60px;
+    background: rgba(74, 144, 226, 0.1);
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.swimming-fish {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: swim 4s ease-in-out infinite;
+}
+
+.swimming-fish i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+@keyframes swim {
+    0%, 100% {
+        left: 0%;
+    }
+    50% {
+        left: 90%;
+    }
+}
+
+/* Activities Section */
+.activities-section h3 {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.activity-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.activity-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.activity-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: var(--gradient-3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.activity-card:hover .activity-icon {
+    transform: rotate(360deg);
+}
+
+.activity-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.activity-card h4 {
+    color: var(--dark-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.activity-card p {
+    color: #666;
+    margin: 0;
+}
+
+/* Fun Fact Section */
+.fun-fact-card {
+    background: var(--gradient-1);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.fun-fact-card h4 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.fun-fact-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    padding-top: 30px;
+    border-top: 2px solid var(--light-color);
+}
+
+footer p {
+    color: var(--dark-color);
+}
+
+.social-links .btn {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.social-links .btn:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* Bubbles Background Effect */
+.bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: rise 15s infinite ease-in;
+}
+
+.bubble:nth-child(1) {
+    width: 40px;
+    height: 40px;
+    left: 10%;
+    animation-duration: 12s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    width: 20px;
+    height: 20px;
+    left: 20%;
+    animation-duration: 14s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+    width: 50px;
+    height: 50px;
+    left: 35%;
+    animation-duration: 16s;
+    animation-delay: 4s;
+}
+
+.bubble:nth-child(4) {
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    animation-duration: 13s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(5) {
+    width: 60px;
+    height: 60px;
+    left: 55%;
+    animation-duration: 15s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(6) {
+    width: 25px;
+    height: 25px;
+    left: 65%;
+    animation-duration: 11s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(7) {
+    width: 45px;
+    height: 45px;
+    left: 75%;
+    animation-duration: 17s;
+    animation-delay: 5s;
+}
+
+.bubble:nth-child(8) {
+    width: 35px;
+    height: 35px;
+    left: 80%;
+    animation-duration: 14s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(9) {
+    width: 55px;
+    height: 55px;
+    left: 90%;
+    animation-duration: 12s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(10) {
+    width: 30px;
+    height: 30px;
+    left: 95%;
+    animation-duration: 16s;
+    animation-delay: 4s;
+}
+
+@keyframes rise {
+    0% {
+        bottom: -100px;
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(100px);
+    }
+    100% {
+        bottom: 110vh;
+        transform: translateX(-100px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 40px 25px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .main-message h2 {
+        font-size: 1.75rem;
+    }
+
+    .logo-placeholder img {
+        max-width: 200px;
+    }
+
+    .activity-card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading animation for images */
+img {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
